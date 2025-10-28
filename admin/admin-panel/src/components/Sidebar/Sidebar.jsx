@@ -1,3 +1,6 @@
+
+
+
 import React from 'react'
 import './Sidebar.css'
 import { assets } from '../../assets/assets'
@@ -18,6 +21,11 @@ const Sidebar = () => {
                 <NavLink to='/orders' className="sidebar-option">
                     <img src={assets.parcel_icon} alt="" />
                     <p>Orders</p>
+                </NavLink>
+                {/* Add Coupons Option */}
+                <NavLink to='/coupons' className="sidebar-option">
+                    <img src={assets.discount_icon} alt="" />
+                    <p>Coupons</p>
                 </NavLink>
             </div>
         </div>

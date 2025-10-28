@@ -1,3 +1,6 @@
+
+
+
 import React, {  useContext, useState } from 'react'
 import './LoginPopup.css';
 import { assets } from '../../assets/assets';
@@ -33,13 +36,30 @@ const LoginPopup = ({setShowLogin}) => {
       if(response.data.success){
           setToken(response.data.token)
           localStorage.setItem("token",response.data.token)
+          
+          // Get user name from JWT token for login, use form data for signup
+          if(currState==="Login"){
+            // For login: Extract name from JWT token
+            const tokenData = JSON.parse(atob(response.data.token.split('.')[1]));
+            const userData = {
+              name: tokenData.name || 'User',
+              email: data.email
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+          } else {
+            // For signup: Use the name from form data
+            const userData = {
+              name: data.name,
+              email: data.email
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+          }
+          
           setShowLogin(false)
       }else{
          alert(response.data.message)
       }
     }
-
- 
 
   return (
     <div className='login-popup'>

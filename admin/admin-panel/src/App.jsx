@@ -1,3 +1,6 @@
+
+
+
 import React from 'react'
 import Sidebar from './components/Sidebar/Sidebar'
 import Navbar from './components/Navbar/Navbar'
@@ -5,10 +8,9 @@ import { Routes, Route } from 'react-router-dom';
 import Orders from './pages/Orders/Orders';
 import List from './pages/List/List';
 import Add from './pages/Add/Add';
+import Coupons from './pages/Coupons/Coupons'; // Add this import
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
 
 const App = () => {
 
@@ -25,6 +27,7 @@ const App = () => {
           <Route path="/add" element={<Add url={url}/>} />
           <Route path="/list" element={<List url={url}/>} />
           <Route path="/orders" element={<Orders url={url}/>} />
+          <Route path="/coupons" element={<Coupons url={url}/>} /> {/* Add this route */}
         </Routes>
       </div>
     </div>

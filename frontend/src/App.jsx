@@ -8,6 +8,10 @@ import Footer from '../src/components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/verify/verify'
 import MyOrders from './pages/myOrders/myOrders'
+import AdminCoupons from './pages/AdminCoupons/AdminCoupons'
+import FoodDetail from './pages/FoodDetail/FoodDetail'
+import Profile from './pages/Profile/Profile';
+
 
 
 const App = () => {
@@ -21,10 +25,14 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile/>}/>
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
           <Route path='/verify' element={<Verify/>}/>
           <Route path='/myorders' element={<MyOrders/>} />
+          <Route path='/admin/coupons' element={<AdminCoupons/>} /> {/* Add this route */}
+          <Route path='/food/:foodId' element={<FoodDetail/>} /> {/* Add this route */}
+
         </Routes>
 
       </div>

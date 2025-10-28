@@ -48,3 +48,14 @@
     padding: 10px;
     border: none;
 }
+
+
+
+
+.field-group label{
+    color:#666;
+}
+
+.order-note{
+    color:#666;
+}

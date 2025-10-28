@@ -1,3 +1,6 @@
+
+
+
 import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema({
@@ -7,7 +10,10 @@ const orderSchema = new mongoose.Schema({
     address:{type:Object,required:true},
     status:{type:String,default:"Food Processing"},
     date:{type:Date,default:Date.now()},
-    payment:{type:Boolean,default:false}
+    payment:{type:Boolean,default:false},
+    couponCode:{type:String,default:""},
+    discountAmount:{type:Number,default:0},
+    finalAmount:{type:Number,required:true}
 })
 
 const orderModel=mongoose.models.order || mongoose.model("order",orderSchema)

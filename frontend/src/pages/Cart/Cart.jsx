@@ -1,13 +1,52 @@
-import React, { useContext } from 'react'
+
+
+
+import React, { useContext, useState } from 'react'
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+  const { 
+    cartItems, 
+    food_list, 
+    removeFromCart, 
+    getTotalCartAmount, 
+    url,
+    appliedCoupon,
+    applyCoupon,
+    removeCoupon,
+    getTotalWithDiscount,
+    getDiscountAmount
+  } = useContext(StoreContext);
 
-  const { cartItems, food_list, removeFromCart,getTotalCartAmount,url } = useContext(StoreContext);
+  const [promoCode, setPromoCode] = useState('');
+  const [promoMessage, setPromoMessage] = useState('');
+  const navigate = useNavigate();
 
-  const navigate= useNavigate();
+  const handleApplyPromo = async () => {
+    if (!promoCode.trim()) {
+      setPromoMessage('Please enter a promo code');
+      return;
+    }
+
+    const result = await applyCoupon(promoCode);
+    setPromoMessage(result.message);
+    
+    if (result.success) {
+      setPromoCode('');
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    removeCoupon();
+    setPromoMessage('');
+  };
+
+  const subtotal = getTotalCartAmount();
+  const deliveryFee = subtotal === 0 ? 0 : 2;
+  const discount = getDiscountAmount();
+  const total = getTotalWithDiscount();
 
   return (
     <div className='cart'>
@@ -25,7 +64,7 @@ const Cart = () => {
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
-              <div>
+              <div key={item._id}>
                 <div className='cart-items-title cart-items-item'>
                   <img src={url+"/images/"+item.image} alt="" />
                   <p>{item.name}</p>
@@ -38,6 +77,7 @@ const Cart = () => {
               </div>
             )
           }
+          return null;
         })}
       </div>
       <div className="cart-bottom">
@@ -46,28 +86,55 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>Rs.{getTotalCartAmount()}</p>
+              <p>Rs.{subtotal}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>Rs.{getTotalCartAmount()===0?0:2}</p>
+              <p>Rs.{deliveryFee}</p>
             </div>
             <hr />
+            {appliedCoupon && (
+              <>
+                <div className="cart-total-details discount">
+                  <p>Discount ({appliedCoupon.discountPercent}% off)</p>
+                  <p>- Rs.{discount}</p>
+                </div>
+                <hr />
+              </>
+            )}
             <div className="cart-total-details">
               <b>Total</b>
-              <b>Rs.{getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
+              <b>Rs.{total}</b>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
+          <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>
-            <p>If you have a promocode, enter it here</p>
-            <div className='cart-promocode-input'>
-                 <input type="text" placeholder='Promo code'/>
-                 <button>Submit</button>
-            </div>
+            <p>If you have a promo code, enter it here</p>
+            {appliedCoupon ? (
+              <div className="applied-coupon">
+                <p>Applied: {appliedCoupon.code} ({appliedCoupon.discountPercent}% off)</p>
+                <button onClick={handleRemoveCoupon} className="remove-coupon">Remove</button>
+              </div>
+            ) : (
+              <div className='cart-promocode-input'>
+                <input 
+                  type="text" 
+                  placeholder='Promo code' 
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleApplyPromo()}
+                />
+                <button onClick={handleApplyPromo}>Apply</button>
+              </div>
+            )}
+            {promoMessage && (
+              <p className={`promo-message ${appliedCoupon ? 'success' : 'error'}`}>
+                {promoMessage}
+              </p>
+            )}
           </div>
         </div>
       </div>

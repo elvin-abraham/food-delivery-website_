@@ -1,0 +1,470 @@
+.food-detail {
+    min-height: 100vh;
+    background: white;
+    color: black;
+    padding: 20px 0;
+    background-color: red;
+}
+
+.food-detail.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    gap: 20px;
+}
+
+.food-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: red;
+}
+
+.back-button {
+    background: tomato;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #e04444;
+}
+
+.food-detail-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: start;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    background-color: red;
+}
+
+.food-detail-image {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.food-detail-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.food-detail-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.food-detail-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: black;
+}
+
+.food-detail-price {
+    font-size: 2rem;
+    font-weight: 500;
+    color: yellow;
+    margin-bottom: 25px;
+}
+
+.food-detail-cart {
+    margin-bottom: 25px;
+}
+
+.add-to-cart-btn {
+    background: tomato;
+    color: yellow;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: #e04444;
+}
+
+.add-to-cart-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid tomato;
+}
+
+.cart-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.cart-controls button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.cart-controls button img {
+    width: 20px;
+    height: 20px;
+}
+
+.cart-controls span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    min-width: 30px;
+    text-align: center;
+}
+
+.food-detail-category {
+    font-size: 1rem;
+    color: black;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Reviews Section */
+.food-reviews {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px #00000015;
+    background-color: red;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid tomato;
+}
+
+.reviews-header h2 {
+    color: black;
+    margin: 0;
+}
+
+.add-review-btn {
+    background: tomato;
+    color: yellow;
+    border: 2px solid tomato;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.add-review-btn:hover {
+    background: #e04444;
+    border-color: #e04444;
+}
+
+/* Review Form */
+.review-form {
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    background-color: #333;
+}
+
+.review-form h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: yellow;
+}
+
+.rating-input {
+    margin-bottom: 20px;
+}
+
+.rating-input label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: yellow;
+    font-size: 1.1rem;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star-rating .star {
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.star-rating .star.selected,
+.star-rating .star.hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.star-rating .star:hover {
+    transform: scale(1.1);
+}
+
+.rating-value {
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.comment-input {
+    margin-bottom: 20px;
+}
+
+.comment-input label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: yellow;
+    font-size: 1.1rem;
+}
+
+.comment-input textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: inherit;
+    background-color: #666;
+}
+
+.comment-input textarea::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.comment-input textarea:focus {
+    outline: none;
+    border-color: tomato;
+}
+
+.review-form button {
+    background: tomato;
+    color: yellow;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.review-form button:hover:not(:disabled) {
+    background: #e04444;
+}
+
+.review-form button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Review Items */
+.user-review, .other-reviews {
+    margin-bottom: 30px;
+}
+
+.user-review h3, .other-reviews h3 {
+    color: black;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.review-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.review-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.review-header strong {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.review-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.review-rating .star {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.review-rating .star.selected {
+    color: #ffd700;
+}
+
+.review-comment {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.review-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.no-reviews {
+    text-align: center;
+    color: black;
+    font-style: italic;
+    padding: 20px;
+}
+
+.delete-review-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.delete-review-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .food-detail-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .food-detail-info h1 {
+        font-size: 2rem;
+    }
+    
+    .food-detail-image img {
+        height: 300px;
+    }
+    
+    .reviews-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .delete-review-btn {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+    
+    .food-detail-container {
+        padding: 0 15px;
+    }
+    
+    .food-reviews {
+        padding: 20px;
+    }
+    
+    .star-rating .star {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .food-detail-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .food-detail-price {
+        font-size: 1.5rem;
+    }
+    
+    .add-to-cart-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .star-rating .star {
+        font-size: 1.8rem;
+    }
+    
+    .delete-review-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

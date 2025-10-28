@@ -1,31 +1,60 @@
-# Logs
+# -------------------------------------------------------
+# 🧹 LOG FILES
+# -------------------------------------------------------
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Dependencies
+# -------------------------------------------------------
+# 📦 DEPENDENCIES
+# -------------------------------------------------------
 node_modules/
 
-# Build outputs
+# -------------------------------------------------------
+# 🏗 BUILD OUTPUTS
+# -------------------------------------------------------
 dist/
+build/
 
-# Environment variables
+# -------------------------------------------------------
+# 🔐 ENVIRONMENT VARIABLES
+# -------------------------------------------------------
 .env
 .env.*
+.env.local
+.env.backup
 
-# Uploaded files (optional, if you don't want runtime uploads in repo)
+# -------------------------------------------------------
+# 🗂 UPLOADS & TEMP FILES
+# (optional - ignore runtime uploads if not needed in repo)
+# -------------------------------------------------------
 uploads/
+temp/
+.cache/
 
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# Editor directories/files
+# -------------------------------------------------------
+# 🧰 EDITOR & IDE SETTINGS
+# -------------------------------------------------------
 .vscode/
 .idea/
 *.suo
 .ntvs
 *.njsproj
 *.sln
+
+# -------------------------------------------------------
+# 💻 OS-SPECIFIC FILES
+# -------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# -------------------------------------------------------
+# 🚀 DEPLOYMENT / PLATFORM FILES
+# -------------------------------------------------------
+.vercel/
+.netlify/
