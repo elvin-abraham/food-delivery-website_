@@ -18,6 +18,8 @@ import parcel_icon from './parcel_icon.png'
 import logo_2 from './logo_2.jpg'
 import logo_3 from './logo_3.jpg'
 
+export const url="https://food-del-backend-upqh.onrender.com"
+
 export const assets = {
     logo,
    logo_2,
