@@ -6,7 +6,7 @@ import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from '../src/components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
-import MyOrders from './pages/myOrders/myOrders'
+import MyOrders from './pages/myOrders/MyOrders'
 import AdminCoupons from './pages/AdminCoupons/AdminCoupons'
 import FoodDetail from './pages/FoodDetail/FoodDetail'
 import Profile from './pages/Profile/Profile';
