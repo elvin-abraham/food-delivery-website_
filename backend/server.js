@@ -13,7 +13,7 @@ import reviewRouter from "./routes/reviewRoute.js";
 
 //app config
 const app = express();
-const port = ProcessingInstruction.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json());
