@@ -1,7 +1,5 @@
+// src/assets/assets.js - NO imports, just export objects with string paths
 
-
-
-// src/assets/assets.js
 export const assets = {
     logo: '/assets/logo.png',
     logo_2: '/assets/logo_2.jpg',
@@ -63,7 +61,7 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name:"Biriyani",
+        menu_name: "Biriyani",
         menu_image: '/assets/chicken_biriyani.jpg'
     },
     {
