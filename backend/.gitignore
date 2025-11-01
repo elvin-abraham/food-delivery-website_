@@ -30,9 +30,8 @@ build/
 
 # -------------------------------------------------------
 # 🗂 UPLOADS & TEMP FILES
-# (optional - ignore runtime uploads if not needed in repo)
+# (COMMENT OUT OR REMOVE uploads/ to include it in repository)
 # -------------------------------------------------------
-uploads/
 temp/
 .cache/
 
